@@ -1,5 +1,7 @@
 # 바닥부터 배우는 강화 학습 P.113 Monte Carlo Learning Algorithm 구현
 
+import random
+
 class GridWorld():
     def __init__(self):
         self.x = 0
@@ -55,3 +57,22 @@ class GridWorld():
     def reset(self):
         self.x = 0
         self.y = 0
+
+class Agent():
+    def __init__(self):
+        pass
+
+    def select_action(self):
+        # Action을 확률적으로 선택
+        coin = random.random()
+
+        if coin < 0.25:
+            action = 0
+        elif coin < 0.5:
+            action = 1
+        elif coin < 0.75:
+            action = 2
+        else:
+            action = 3
+            
+        return action
